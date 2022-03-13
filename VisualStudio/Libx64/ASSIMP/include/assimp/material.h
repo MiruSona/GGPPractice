@@ -331,7 +331,7 @@ enum aiTextureType {
 #endif
 };
 
-#define AI_TEXTURE_TYPE_MAX aiTextureType_TRANSMISSION
+#define AI_TEXTURE_TYPE_MAX aiTextureType_UNKNOWN
 
 // -------------------------------------------------------------------------------
 // Get a string for a given aiTextureType

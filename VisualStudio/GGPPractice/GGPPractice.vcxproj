@@ -114,13 +114,21 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\Libx64\GLEW\include;..\Libx64\ASSIMP\include;..\Libx64\GLM\include;..\Libx64\SOIL2\include;..\Libx64\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\Libx64\GLEW\lib;..\Libx64\ASSIMP\lib;..\Libx64\GLM\lib;..\Libx64\SOIL2\lib;..\Libx64\SDL2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;assimp-vc143-mt.lib;glm.lib;SOIL2.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)\..\Libx64\GLEW\lib\*.dll" "$(OutDir)" /i /s /y
+xcopy "$(ProjectDir)\..\Libx64\ASSIMP\lib\*.dll" "$(OutDir)" /i /s /y
+xcopy "$(ProjectDir)\..\Libx64\SDL2\lib\*.dll" "$(OutDir)" /i /s /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
