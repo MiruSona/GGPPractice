@@ -147,7 +147,24 @@ xcopy "$(ProjectDir)\..\Libx64\SDL2\lib\*.dll" "$(OutDir)" /i /s /y</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GGPPractice.cpp" />
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\BasicMesh.frag" />
+    <None Include="Shader\BasicMesh.vert" />
+    <None Include="Shader\GBufferGlobal.frag" />
+    <None Include="Shader\GBufferGlobal.vert" />
+    <None Include="Shader\GBufferPointLight.frag" />
+    <None Include="Shader\GBufferWrite.frag" />
+    <None Include="Shader\Phong.frag" />
+    <None Include="Shader\Phong.vert" />
+    <None Include="Shader\Skinned.vert" />
+    <None Include="Shader\Sprite.frag" />
+    <None Include="Shader\Sprite.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

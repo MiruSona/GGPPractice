@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{882e73b8-b7ba-45ac-a8d8-9d08130f75dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Graphics">
+      <UniqueIdentifier>{799ae47e-ee0f-4ab4-a8e8-7d8c21d6a791}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Graphics">
+      <UniqueIdentifier>{6b68fc8a-ac32-44b2-ac12-7385a1b4245e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>소스 파일\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMaster.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>소스 파일\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArray.cpp">
+      <Filter>소스 파일\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>소스 파일\Graphics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameMaster.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>헤더 파일\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>헤더 파일\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.h">
+      <Filter>헤더 파일\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>헤더 파일\Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\BasicMesh.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\BasicMesh.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\GBufferGlobal.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\GBufferGlobal.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\GBufferPointLight.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\GBufferWrite.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\Phong.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\Phong.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\Skinned.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\Sprite.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\Sprite.vert">
+      <Filter>Shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>
