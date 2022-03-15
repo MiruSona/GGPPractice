@@ -7,6 +7,14 @@
 
 class RenderSystem {
 private:
+	//초기화
+	bool SpriteInit();
+	bool MeshInit();
+
+	//그리기
+	void Draw2D();
+	void Draw3D();
+
 	//관리자
 	class GameMaster& mGameMaster;
 
@@ -15,12 +23,15 @@ private:
 
 	//쉐이더
 	class Shader* mSpriteShader;
+	class Shader* mMeshShader;
 
 	//VertexArray
 	class VertexArray* mSpriteVA;
+	std::vector<class VertexArray*> mMeshVAs;
 
 	//텍스쳐
 	std::vector<class Texture*> mSpriteTextures;
+	std::vector<class Texture*> mMeshTextures;
 
 	//화면 크기
 	float mScreenWidth, mScreenHeight;

@@ -147,6 +147,7 @@ xcopy "$(ProjectDir)\..\Libx64\SDL2\lib\*.dll" "$(OutDir)" /i /s /y</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="GameMaster.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
@@ -155,6 +156,7 @@ xcopy "$(ProjectDir)\..\Libx64\SDL2\lib\*.dll" "$(OutDir)" /i /s /y</Command>
     <ClCompile Include="VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="GameMaster.h" />
     <ClInclude Include="RenderSystem.h" />

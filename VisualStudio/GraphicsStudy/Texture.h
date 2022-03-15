@@ -16,7 +16,7 @@ public:
 	~Texture();
 
 	//로드
-	bool Load(const std::string& fileName);
+	bool Load(const std::string& fileName, bool _flip_y = false);
 
 	//활성화(바인딩)
 	void Active();

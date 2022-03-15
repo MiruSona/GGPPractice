@@ -19,7 +19,7 @@ private:
 public:
 	//생성/소멸자
 	VertexArray(const void* _vertices, GLuint _num_vertices,
-		const GLuint* _indices, GLuint _num_indices, bool _is_sprite = false);
+		const GLuint* _indices = nullptr, GLuint _num_indices = -1, bool _is_sprite = false);
 	~VertexArray();
 
 	//활성화(바인딩)

@@ -216,5 +216,5 @@ void Shader::SetMat4(const std::string& _name, const glm::mat4& _mat) const {
 	//이름으로 uniform 찾기
 	GLuint loc = glGetUniformLocation(mProgramID, _name.c_str());
 	//uniform에 데이터 보내기
-	glUniformMatrix4fv(loc, 1, GL_TRUE, &_mat[0][0]);
+	glUniformMatrix4fv(loc, 1, GL_FALSE, &_mat[0][0]);
 }

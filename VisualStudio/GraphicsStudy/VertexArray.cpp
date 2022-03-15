@@ -16,7 +16,8 @@ VertexArray::VertexArray(const void* _vertices, GLuint _num_vertices,
 	glBindVertexArray(mVertexArray);
 
 	//VertexSize 설정
-	GLuint vertex_size = 8 * size_f;
+	//GLuint vertex_size = 8 * size_f;
+	GLuint vertex_size = 5 * size_f;
 
 	//Vertex Buffer 생성
 	glGenBuffers(1, &mVertexBuffer);
@@ -30,13 +31,15 @@ VertexArray::VertexArray(const void* _vertices, GLuint _num_vertices,
 		GL_STATIC_DRAW);				//이 데이터 용도
 
 	//Index Buffer 생성
-	glGenBuffers(1, &mIndexBuffer);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIndexBuffer);
-	glBufferData(
-		GL_ELEMENT_ARRAY_BUFFER,
-		_num_indices * size_ui,
-		_indices,
-		GL_STATIC_DRAW);
+	if (_num_indices != -1) {
+		glGenBuffers(1, &mIndexBuffer);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIndexBuffer);
+		glBufferData(
+			GL_ELEMENT_ARRAY_BUFFER,
+			_num_indices * size_ui,
+			_indices,
+			GL_STATIC_DRAW);
+	}
 
 	//Vertex Shader 속성들 설정 = Vertex Shader Layout 설정
 	//0 번째 Vertex 속성 설정 = 위치 좌표
@@ -52,34 +55,24 @@ VertexArray::VertexArray(const void* _vertices, GLuint _num_vertices,
 	);
 	//Sprite 스프라이트 설정
 	if (_is_sprite) {
-		//1 번째 Vertex 속성 설정 = 버텍스 컬러값
+		//1 번째 Vertex 속성 설정 = 텍스쳐 좌표
 		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, vertex_size,
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, vertex_size,
 			reinterpret_cast<void*>(size_f * 3));
-		//2 번째 Vertex 속성 설정 = 텍스쳐 좌표
-		glEnableVertexAttribArray(2);
-		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, vertex_size,
-			reinterpret_cast<void*>(size_f * 6));
 	}
 	//메쉬 설정
 	else {
-		//1 번째 Vertex 속성 설정 = 법선 좌표
+		//1 번째 Vertex 속성 설정 = 텍스쳐 좌표
 		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, vertex_size,
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, vertex_size,
 			reinterpret_cast<void*>(size_f * 3));
-		//2 번째 Vertex 속성 설정 = 텍스쳐 좌표
-		glEnableVertexAttribArray(2);
-		//오프셋이 reinterpret_cast<void*>(sizeof(float) * 6)인 이유:
-		//x, y, z좌표 바이트 만큼 넘어가야 u, v 좌표가 나와서 이만큼 오프셋둠
-		//reinterpret_cast<void*>쓴 이유 : 강제로 void*로 변환하기 위해
-		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, vertex_size,
-			reinterpret_cast<void*>(size_f * 6));
 	}
 }
 VertexArray::~VertexArray() {
 	//모든 버퍼 제거
 	glDeleteBuffers(1, &mVertexBuffer);
-	glDeleteBuffers(1, &mIndexBuffer);
+	if(mNumIndices != -1)
+		glDeleteBuffers(1, &mIndexBuffer);
 	glDeleteBuffers(1, &mVertexArray);
 }
 
